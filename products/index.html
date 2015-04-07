@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>產品之旅 &#8211; Log4資料分析公司</title>
+<title>產品介紹 &#8211; Log4資料分析公司</title>
 <meta name="description" content="介紹各類軟體之安裝與設定.">
 <meta name="keywords" content="">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="產品之旅">
+<meta name="twitter:title" content="產品介紹">
 <meta name="twitter:description" content="介紹各類軟體之安裝與設定.">
 <meta name="twitter:site" content="@mingderwang">
 <meta name="twitter:creator" content="@mingderwang">
@@ -23,7 +23,7 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="產品之旅">
+<meta property="og:title" content="產品介紹">
 <meta property="og:description" content="介紹各類軟體之安裝與設定.">
 <meta property="og:url" content="//www.log7.info/products/">
 <meta property="og:site_name" content="Log4資料分析公司">
@@ -88,7 +88,7 @@
 					    
 					        
 					    
-					    <li><a href="//www.log7.info/products/" >產品之旅</a></li>
+					    <li><a href="//www.log7.info/products/" >產品介紹</a></li>
 					  
 					    
 					        
@@ -108,7 +108,7 @@
 					    
 					        
 					        
-					    <li><a href="https://chef.log7.info" target="_blank">chef伺服器</a></li>
+					    <li><a href="https://chef-server.log4analytics.com" target="_blank">chef伺服器</a></li>
 					  
 		    </ul>
 		</nav>
@@ -121,7 +121,7 @@
     
       "//www.log7.info/images/sample-image-3.jpg"
     
-  alt="產品之旅 feature image">
+  alt="產品介紹 feature image">
   
     <span class="image-credit">Photo Credit: <a href="http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/">WeGraphics</a></span>
   
@@ -137,7 +137,7 @@
 	<img src="//www.log7.info/images/bio-photo-2.png" class="bio-photo" alt="Log4資料分析 bio photo">
 
 <h3>Log4資料分析</h3>
-<p>提供系統資料收集監控與分析工具</p>
+<p>提供系統自動部署,資料收集,以及監控與分析工具</p>
 <a href="mailto:ming@log4analytics.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
 <a href="http://twitter.com/mingderwang" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
 <a href="http://facebook.com/log4analytics" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
@@ -145,7 +145,7 @@
 
 
 
-<a href="http://github.com/mingder78" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+<a href="http://github.com/mingderwang" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
 
 
 
@@ -156,7 +156,7 @@
 
   </div>
   <article class="page">
-    <h1>產品之旅</h1>
+    <h1>產品介紹</h1>
     <div class="article-wrap">
       <section id="table-of-contents" class="toc">
   <header>
@@ -164,23 +164,14 @@
   </header>
 <div id="drawer">
 <ul id="markdown-toc">
-  <li><a href="#section">本季以系統資料為主題</a></li>
-  <li><a href="#kibana">Kibana</a>    <ul>
-      <li><a href="#section-1">– 安裝</a></li>
-      <li><a href="#section-2">– 技巧</a></li>
-    </ul>
-  </li>
-  <li><a href="#logstash">Logstash</a>    <ul>
-      <li><a href="#section-3">– 安裝</a></li>
-      <li><a href="#section-4">– 技巧</a></li>
-    </ul>
-  </li>
-  <li><a href="#elasticsearch">Elasticsearch</a>    <ul>
-      <li><a href="#section-5">– 安裝</a></li>
-      <li><a href="#section-6">– 技巧</a></li>
-      <li><a href="#section-7">系統資料收集流程</a></li>
-      <li><a href="#section-8">客製化服務</a></li>
-      <li><a href="#section-9">版權所有</a></li>
+  <li><a href="#it-" id="markdown-toc-it-">本季以 IT 自動化為主</a></li>
+  <li><a href="#chef--elk" id="markdown-toc-chef--elk">如何使用 Chef 安裝 ELK</a>    <ul>
+      <li><a href="#section" id="markdown-toc-section">– 安裝</a></li>
+      <li><a href="#section-1" id="markdown-toc-section-1">– 使用</a></li>
+      <li><a href="#section-2" id="markdown-toc-section-2">– 技巧</a></li>
+      <li><a href="#section-3" id="markdown-toc-section-3">系統資料收集流程</a></li>
+      <li><a href="#section-4" id="markdown-toc-section-4">客製化服務</a></li>
+      <li><a href="#section-5" id="markdown-toc-section-5">版權所有</a></li>
     </ul>
   </li>
 </ul>
@@ -189,49 +180,92 @@
 </section>
 <!-- /#table-of-contents -->
 
-<p>本公司所提供之軟體以開源軟體為主, 我們工程師也投入這些軟體之開發及改良. 平常除了在<a href="/posts/">技術日誌</a> 與大家分享使用心得以及提供資安及改版等之消息外, 主要安裝及使用等教學文件將會在此頁詳細介紹. </p>
+<p>本公司所提供之軟體以開源軟體為主, 我們工程師也投入這些軟體之開發及改良。 平常除了在<a href="/posts/">技術日誌</a>
+與大家分享使用心得以及提供資安及改版等之消息外, 主要安裝及使用等教學文件將會在此頁詳細介紹。</p>
 
-<h2 id="section">本季以系統資料為主題</h2>
+<h2 id="it-">本季以 IT 自動化為主</h2>
 <blockquote>
-  <p>提供 <strong>Kibana</strong>, <strong>Logstash</strong> 以及 <strong>Elasticsearch</strong> 產品介紹與服務, 它擁有類似splunk的系統資訊及時監控與搜尋功能, 但其功能較為簡易, 當然在價格上也有相當大的差別. 本公司將提供客製化服務, 以增加必要的功能來支費, 而非購買大量但沒用到的功能, 來換取最佳的ROI(投資報酬率). </p>
+  <p>提供 <strong>Chef 12</strong> 以及 <strong>Elasticsearch 1.4</strong>, <strong>Logstash</strong>, <strong>Kibana 4.0</strong> (ELK)
+等產品之介紹與服務。 其中 Chef 扮演著 IT 自動部署非常重要的角色. 配合 ELK 收集大量系統日誌和資料,
+提供更有效率的電腦設備與資源的監控與管理。</p>
 </blockquote>
 
-<h2 id="kibana">Kibana</h2>
+<blockquote>
+  <p>如此一來, 讓每個公司都能擁有類似安裝 <strong>Splunk</strong> 的系統資訊及時監控與搜尋功能,
+雖然 ELK 功能較為簡易, 但在價格上卻是天壤之別。
+我們也提供客製化服務, 來適時地增加必要的功能, 以換取公司最佳的 ROI (投資回報率)</p>
+</blockquote>
 
-<h3 id="section-1">– 安裝</h3>
+<hr />
+
+<h2 id="chef--elk">如何使用 Chef 安裝 ELK</h2>
+
+<p>基本上 Chef 可以分有主機的 chef-repo 以及沒主機的 chef-solo 兩種, 我們建議公司採用 chef-repo
+方式來控管公司所有電腦軟體版本安裝和更新, 進而自動控管使用者帳號和權限部署。</p>
+
+<h3 id="section">– 安裝</h3>
+
+<p>第一, 我們先準備一台用來下 knife 指令的工作站, 這裡以ㄧ台裝好 Ubuntu 12.04 或 Mac OS X 筆電為例。
+請依照 https://downloads.chef.io/chef-dk/ 指示, 安裝好 ChefSDK, 並將其安裝目錄加至您 PATH
+路徑.</p>
+
+<h3 id="section-1">– 使用</h3>
+
+<p>第一, 生成一個新的工作目錄, 這裡稱之為 “chef-repo”。您最好使用 git 版本控管此目錄, 如此一來,
+便可以讓其他人或在其他電腦上更新 chef server 內容和修改 cookbooks 和 nodes 等資源.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">//產生一個新 repo 目錄, 叫 chef-repo
+chef generate repo chef-repo</code></pre></div>
+
+<p>第二, 我們找一台本工作站可以 ssh 的到的電腦, 這裡假設它叫 “node1”, 來自動配置 Elasticsearch.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>chef-repo
+mkdir nodes
+<span class="nb">cd </span>nodes
+cat &gt; node1.json <span class="s">&lt;&lt;EOL</span>
+<span class="s">{ &quot;name&quot;: &quot;node1&quot;,</span>
+<span class="s">&quot;chef_type&quot;: &quot;node&quot;,</span>
+<span class="s">&quot;json_class&quot;: &quot;Chef::Node&quot;,</span>
+<span class="s">&quot;chef_environment&quot;: &quot;_default&quot;,</span>
+<span class="s">&quot;default&quot;: {</span>
+<span class="s">  },</span>
+<span class="s">  &quot;normal&quot;: {</span>
+<span class="s">    },</span>
+<span class="s">    &quot;override&quot;: {</span>
+<span class="s">      },</span>
+<span class="s">      &quot;elasticsearch&quot;: {</span>
+<span class="s">        &quot;cluster&quot; : { &quot;name&quot; : &quot;elasticsearch_from_chef&quot; }</span>
+<span class="s">        },</span>
+<span class="s">        &quot;run_list&quot;: [</span>
+<span class="s">        &quot;recipe[monit]&quot;,</span>
+<span class="s">        &quot;recipe[java]&quot;,</span>
+<span class="s">        &quot;recipe[elasticsearch]&quot;,</span>
+<span class="s">        &quot;recipe[elasticsearch::monit]&quot;,</span>
+<span class="s">        &quot;recipe[log4-elasticsearch]&quot;,</span>
+<span class="s">        &quot;recipe[logstash::server]&quot;,</span>
+<span class="s">        &quot;recipe[chamber-kibana::default]&quot;</span>
+<span class="s">        ]</span>
+<span class="s">      }</span>
+<span class="s">EOL</span></code></pre></div>
 
 <h3 id="section-2">– 技巧</h3>
 
 <hr />
 
-<h2 id="logstash">Logstash</h2>
-
-<h3 id="section-3">– 安裝</h3>
-
-<h3 id="section-4">– 技巧</h3>
+<h3 id="section-3">系統資料收集流程</h3>
 
 <hr />
 
-<h2 id="elasticsearch">Elasticsearch</h2>
-
-<h3 id="section-5">– 安裝</h3>
-
-<h3 id="section-6">– 技巧</h3>
+<h3 id="section-4">客製化服務</h3>
 
 <hr />
 
-<h3 id="section-7">系統資料收集流程</h3>
-
-<hr />
-
-<h3 id="section-8">客製化服務</h3>
-
-<hr />
-
-<h3 id="section-9">版權所有</h3>
+<h3 id="section-5">版權所有</h3>
 
 <ul>
-  <li>Kibana, Logstash, and Elasticsearch - Licensed under the Apache License, Version 2.0</li>
+  <li>Splunk is a product and trademark of Splunk Inc.</li>
+  <li>Elasticsearch, Logstash &amp; Kibana are trademarks of Elasticsearch BV.</li>
+  <li>Chef and Open Source Chef is a trademark of Chef Software, Inc.</li>
 </ul>
 
     </div><!-- /.article-wrap -->
