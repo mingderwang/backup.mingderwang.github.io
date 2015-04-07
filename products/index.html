@@ -169,9 +169,8 @@
       <li><a href="#section" id="markdown-toc-section">– 安裝</a></li>
       <li><a href="#section-1" id="markdown-toc-section-1">– 使用</a></li>
       <li><a href="#section-2" id="markdown-toc-section-2">– 技巧</a></li>
-      <li><a href="#section-3" id="markdown-toc-section-3">系統資料收集流程</a></li>
-      <li><a href="#section-4" id="markdown-toc-section-4">客製化服務</a></li>
-      <li><a href="#section-5" id="markdown-toc-section-5">版權所有</a></li>
+      <li><a href="#section-3" id="markdown-toc-section-3">客製化服務</a></li>
+      <li><a href="#section-4" id="markdown-toc-section-4">版權所有</a></li>
     </ul>
   </li>
 </ul>
@@ -217,7 +216,11 @@
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">//產生一個新 repo 目錄, 叫 chef-repo
 chef generate repo chef-repo</code></pre></div>
 
-<p>第二, 我們找一台本工作站可以 ssh 的到的電腦, 這裡假設它叫 “node1”, 來自動配置 Elasticsearch.</p>
+<p>第二, 自動安裝 chef-client 於 node1 主機</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>knife bootstrap node1</code></pre></div>
+
+<p>第三, 我們找一台本工作站可以 ssh 的到的電腦, 這裡假設它叫 “node1”, 來自動配置 Elasticsearch.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>chef-repo
 mkdir nodes
@@ -248,19 +251,35 @@ cat &gt; node1.json <span class="s">&lt;&lt;EOL</span>
 <span class="s">      }</span>
 <span class="s">EOL</span></code></pre></div>
 
+<p>以及利用如下指令, 將 node1 的 runlist 更新到 chef server 上</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>knife node from file node1.json</code></pre></div>
+
+<p>最後, 到 node1 主機上, 手動更新 run list, 就會自動安裝 Elasticsearch, Logstash, 以及 Kibana</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>chef-client</code></pre></div>
+
+<hr />
+
 <h3 id="section-2">– 技巧</h3>
 
-<hr />
-
-<h3 id="section-3">系統資料收集流程</h3>
-
-<hr />
-
-<h3 id="section-4">客製化服務</h3>
+<ol>
+  <li>這裡還包含安裝 monit, 是利用 monit 來確保 Elasticsearch 的不停頓運轉。</li>
+</ol>
 
 <hr />
 
-<h3 id="section-5">版權所有</h3>
+<h3 id="section-3">客製化服務</h3>
+
+<ul>
+  <li>我們可以幫客戶製作客製化 cookbooks</li>
+  <li>我們可以規劃其他軟體自動化部屬</li>
+  <li>有問題請寄電子郵件到: <a href="mailto:support@log4analytics.com">support@log4analytics.com</a></li>
+</ul>
+
+<hr />
+
+<h3 id="section-4">版權所有</h3>
 
 <ul>
   <li>Splunk is a product and trademark of Splunk Inc.</li>
