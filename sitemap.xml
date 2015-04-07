@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>//www.log7.info/about/</loc>
+    <loc>//www.log4analytics.com/about/</loc>
   </url>
   <url>
-    <loc>//www.log7.info/posts/</loc>
+    <loc>//www.log4analytics.com/posts/</loc>
   </url>
   <url>
-    <loc>//www.log7.info/pricing/</loc>
+    <loc>//www.log4analytics.com/pricing/</loc>
   </url>
   <url>
-    <loc>//www.log7.info/products/</loc>
+    <loc>//www.log4analytics.com/products/</loc>
   </url>
   <url>
-    <loc>//www.log7.info/</loc>
+    <loc>//www.log4analytics.com/</loc>
   </url>
 </urlset>
