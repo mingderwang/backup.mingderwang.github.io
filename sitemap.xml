@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>//localhost:4000/ming/welcome-to-log4-analytics-online-support/</loc>
+    <loc>//www.log4analytics.com/ming/welcome-to-log4-analytics-online-support/</loc>
     <lastmod>2015-04-14T13:34:00+08:00</lastmod>
   </url>
   <url>
-    <loc>//localhost:4000/about/</loc>
+    <loc>//www.log4analytics.com/about/</loc>
   </url>
   <url>
-    <loc>//localhost:4000/posts/</loc>
+    <loc>//www.log4analytics.com/posts/</loc>
   </url>
   <url>
-    <loc>//localhost:4000/pricing/</loc>
+    <loc>//www.log4analytics.com/pricing/</loc>
   </url>
   <url>
-    <loc>//localhost:4000/products/</loc>
+    <loc>//www.log4analytics.com/products/</loc>
   </url>
   <url>
-    <loc>//localhost:4000/</loc>
+    <loc>//www.log4analytics.com/</loc>
   </url>
 </urlset>

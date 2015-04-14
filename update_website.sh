@@ -11,7 +11,7 @@ cd $MAIN_DIR
 rsync -av --delete $SRC_DIR/* $DES_DIR 
 cd $DES_DIR
 git status 
-git add .
+git add -A 
 echo '----------'
 git status
 git commit -m 'update contents'
