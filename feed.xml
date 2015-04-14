@@ -2,14 +2,44 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Log4資料分析公司</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="//www.log4analytics.com/feed.xml" />
-<link rel="alternate" type="text/html" href="//www.log4analytics.com" />
-<updated>2015-04-13T19:04:47+08:00</updated>
-<id>//www.log4analytics.com/</id>
+<link rel="self" type="application/atom+xml" href="//localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="//localhost:4000" />
+<updated>2015-04-14T15:20:58+08:00</updated>
+<id>//localhost:4000/</id>
 <author>
   <name>Log4資料分析</name>
-  <uri>//www.log4analytics.com/</uri>
+  <uri>//localhost:4000/</uri>
   <email>sales@log4analytics.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Welcome to Log4 Analytics Online Support]]></title>
+  <link rel="alternate" type="text/html" href="//localhost:4000/ming/welcome-to-log4-analytics-online-support/" />
+  <id>//localhost:4000/ming/welcome-to-log4-analytics-online-support</id>
+  <published>2015-04-14T13:34:00+08:00</published>
+  <updated>2015-04-14T13:34:00+08:00</updated>
+  <author>
+    <name>Ming-der Wang</name>
+    <uri>//localhost:4000</uri>
+    <email>sales@log4analytics.com</email>
+  </author>
+  <content type="html">&lt;p&gt;Welcome to join our DevOps community. We will share our knowlege about IT automation and data analysis for systems, applications, or even security.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;This is a snapshot of slack search as follow; It’s so powerful so that we also can search all chats in history or find uploaded documents for recalls.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/slack_snapshot.png&quot; alt=&quot;slack search&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;to-join-us&quot;&gt;To Join Us&lt;/h2&gt;
+
+&lt;p&gt;Please &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#114;&amp;#116;&amp;#064;&amp;#108;&amp;#111;&amp;#103;&amp;#052;&amp;#097;&amp;#110;&amp;#097;&amp;#108;&amp;#121;&amp;#116;&amp;#105;&amp;#099;&amp;#115;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;send us&lt;/a&gt; your email address if you want to join &lt;a href=&quot;https://devopstaiwan.slack.com&quot;&gt;DevOpsTaiwan.slack.com&lt;/a&gt;, We need your email address to invite you. I hope devops shares theirs projects or experiences in this chat room. specially who use docker, chef, or any other tools, like logstash, splunk (or elasticsearch). kubernetes, monit, zabbix, Jenkins, and so on.&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;//localhost:4000/ming/welcome-to-log4-analytics-online-support/&quot;&gt;Welcome to Log4 Analytics Online Support&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//localhost:4000&quot;&gt;Log4資料分析公司&lt;/a&gt; on April 14, 2015.&lt;/p&gt;</content>
+</entry>
 
 </feed>
