@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//www.log4analytics.com/feed.xml" />
 <link rel="alternate" type="text/html" href="//www.log4analytics.com" />
-<updated>2015-04-15T18:47:19+08:00</updated>
+<updated>2015-04-15T18:56:53+08:00</updated>
 <id>//www.log4analytics.com/</id>
 <author>
   <name>Log4 資料分析</name>
@@ -24,7 +24,7 @@
   <author>
     <name>Ming-der Wang</name>
     <uri>//www.log4analytics.com</uri>
-    <email>sales@log4analytics.com</email>
+    <email>ming@log4analytics.com</email>
   </author>
   <content type="html">&lt;p&gt;&lt;a href=&quot;http://video.n.yam.com/20150415977398/%E5%A4%A7%E9%99%B8%E9%A7%AD%E5%AE%A2%E6%94%BB%E6%93%8A%E6%9F%AF%E8%BE%A6%E5%85%AC%E5%AE%A4%20%E5%81%87%E9%83%B5%E4%BB%B6%E9%A8%99%E4%BA%BA%E5%93%A1%E8%B3%87%E6%96%99&quot;&gt;最近新聞&lt;/a&gt; 有關駭客攻擊柯辦公室電腦, 每個公司或政府單位人人自危. 也許有些公司覺得公司電腦都有安裝
 防毒軟體, 應該不會有問題, 而忽略了近年來, 病毒軟體已經無法有效防止駭客入侵. 更多人以為
@@ -100,7 +100,7 @@
   <author>
     <name>Ming-der Wang</name>
     <uri>//www.log4analytics.com</uri>
-    <email>sales@log4analytics.com</email>
+    <email>ming@log4analytics.com</email>
   </author>
   <content type="html">&lt;p&gt;Welcome to join our DevOps community. We will share our knowlege about IT automation and data analysis for systems, applications, or even security.&lt;/p&gt;
 
