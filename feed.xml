@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-<title type="text">Log4資料分析公司</title>
+<title type="text">Log4 Analytics</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="//www.log4analytics.com/feed.xml" />
-<link rel="alternate" type="text/html" href="//www.log4analytics.com" />
-<updated>2015-04-15T18:19:41+08:00</updated>
-<id>//www.log4analytics.com/</id>
+<link rel="self" type="application/atom+xml" href="//localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="//localhost:4000" />
+<updated>2015-04-15T18:29:41+08:00</updated>
+<id>//localhost:4000/</id>
 <author>
-  <name>Log4資料分析</name>
-  <uri>//www.log4analytics.com/</uri>
+  <name>Log4 資料分析</name>
+  <uri>//localhost:4000/</uri>
   <email>sales@log4analytics.com</email>
 </author>
 
@@ -17,13 +17,13 @@
 
 <entry>
   <title type="html"><![CDATA[對抗駭客入侵, 預防勝於治療]]></title>
-  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/prepare-for-attacks/" />
-  <id>//www.log4analytics.com/ming/prepare-for-attacks</id>
+  <link rel="alternate" type="text/html" href="//localhost:4000/ming/prepare-for-attacks/" />
+  <id>//localhost:4000/ming/prepare-for-attacks</id>
   <published>2015-04-15T16:37:00+08:00</published>
   <updated>2015-04-15T16:37:00+08:00</updated>
   <author>
     <name>Ming-der Wang</name>
-    <uri>//www.log4analytics.com</uri>
+    <uri>//localhost:4000</uri>
     <email>sales@log4analytics.com</email>
   </author>
   <content type="html">&lt;p&gt;&lt;a href=&quot;http://video.n.yam.com/20150415977398/%E5%A4%A7%E9%99%B8%E9%A7%AD%E5%AE%A2%E6%94%BB%E6%93%8A%E6%9F%AF%E8%BE%A6%E5%85%AC%E5%AE%A4%20%E5%81%87%E9%83%B5%E4%BB%B6%E9%A8%99%E4%BA%BA%E5%93%A1%E8%B3%87%E6%96%99&quot;&gt;最近新聞&lt;/a&gt; 有關駭客攻擊柯辦公室電腦, 每個公司或政府單位人人自危. 也許有些公司覺得公司電腦都有安裝
@@ -85,7 +85,7 @@
 
 &lt;p&gt;桐立科技, Log4Analytics 團隊&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/prepare-for-attacks/&quot;&gt;對抗駭客入侵, 預防勝於治療&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4資料分析公司&lt;/a&gt; on April 15, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;//localhost:4000/ming/prepare-for-attacks/&quot;&gt;對抗駭客入侵, 預防勝於治療&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//localhost:4000&quot;&gt;Log4 Analytics&lt;/a&gt; on April 15, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -93,13 +93,13 @@
 
 <entry>
   <title type="html"><![CDATA[Welcome to Log4 Analytics Online Support]]></title>
-  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/welcome-to-log4-analytics-online-support/" />
-  <id>//www.log4analytics.com/ming/welcome-to-log4-analytics-online-support</id>
+  <link rel="alternate" type="text/html" href="//localhost:4000/ming/welcome-to-log4-analytics-online-support/" />
+  <id>//localhost:4000/ming/welcome-to-log4-analytics-online-support</id>
   <published>2015-04-14T13:34:00+08:00</published>
   <updated>2015-04-14T13:34:00+08:00</updated>
   <author>
     <name>Ming-der Wang</name>
-    <uri>//www.log4analytics.com</uri>
+    <uri>//localhost:4000</uri>
     <email>sales@log4analytics.com</email>
   </author>
   <content type="html">&lt;p&gt;Welcome to join our DevOps community. We will share our knowlege about IT automation and data analysis for systems, applications, or even security.&lt;/p&gt;
@@ -115,7 +115,7 @@
 &lt;p&gt;Please &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#114;&amp;#116;&amp;#064;&amp;#108;&amp;#111;&amp;#103;&amp;#052;&amp;#097;&amp;#110;&amp;#097;&amp;#108;&amp;#121;&amp;#116;&amp;#105;&amp;#099;&amp;#115;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;send us&lt;/a&gt; your email address if you want to join &lt;a href=&quot;https://devopstaiwan.slack.com&quot;&gt;DevOpsTaiwan.slack.com&lt;/a&gt;, We need your email address to invite you. I hope devops shares theirs projects or experiences in this chat room. specially who use docker, chef, or any other tools, like logstash, splunk (or elasticsearch). kubernetes, monit, zabbix, Jenkins, and so on.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/welcome-to-log4-analytics-online-support/&quot;&gt;Welcome to Log4 Analytics Online Support&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4資料分析公司&lt;/a&gt; on April 14, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;//localhost:4000/ming/welcome-to-log4-analytics-online-support/&quot;&gt;Welcome to Log4 Analytics Online Support&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//localhost:4000&quot;&gt;Log4 Analytics&lt;/a&gt; on April 14, 2015.&lt;/p&gt;</content>
 </entry>
 
 </feed>
