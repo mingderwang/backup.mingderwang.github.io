@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//www.log4analytics.com/feed.xml" />
 <link rel="alternate" type="text/html" href="//www.log4analytics.com" />
-<updated>2015-04-15T18:58:00+08:00</updated>
+<updated>2015-06-03T17:36:19+08:00</updated>
 <id>//www.log4analytics.com/</id>
 <author>
   <name>Log4 資料分析</name>
@@ -16,9 +16,213 @@
   
 
 <entry>
-  <title type="html"><![CDATA[對抗駭客入侵, 預防勝於治療]]></title>
-  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/prepare-for-attacks/" />
-  <id>//www.log4analytics.com/ming/prepare-for-attacks</id>
+  <title type="html"><![CDATA[如何用 logstash 收集 rsyslog 的資料]]></title>
+  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/rsyslog-logstash/" />
+  <id>//www.log4analytics.com/ming/rsyslog-logstash</id>
+  <published>2015-06-02T15:14:00+08:00</published>
+  <updated>2015-06-02T15:14:00+08:00</updated>
+  <author>
+    <name>Ming-der Wang</name>
+    <uri>//www.log4analytics.com</uri>
+    <email>ming@log4analytics.com</email>
+  </author>
+  <content type="html">&lt;p&gt;提到電腦管理, 很多公司為了符合ISO, 都有規定將重要電腦的系統日誌收集起來, 方便事後查詢.
+但傳統 MIS 系統管理者, 往往需要花大筆的時間和金錢來收集或甚至於分析這些資料. 這對小公司來說,
+在人力及經費吃緊的情況下, 這可能是一筆沈重的負擔. 這裡, 我們為中小企業尋求一個簡單又便宜得方法,
+又能同時收集 windows 或 linux 電腦的系統訊息和事件日誌, 也能同收集應用程式的日誌,
+例如 php Apache 或 nginx 等網頁日誌, 系統與網路資安相關日誌, 還有硬體防火牆等相關設備的日誌.
+當您可以集中收集時, 意味著您也能, 即時查詢 (方便管理者或售後服務解決問題), 未來更能夠利用 big data
+或所謂的機器學習 (人工智慧的一種技術) 來分析這些資料之間的關係, 即時提供視覺化結果, 當成決策者判斷的依據.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;這裡先介紹 &lt;a href=&quot;http://www.rsyslog.com/&quot;&gt;rsyslog&lt;/a&gt;, 它可以快速且安全的收集各種系統日誌, 將它送到你指定的地方,
+集中管理你想要追蹤的資訊. 速度甚至在本機可以同時分發高達每秒一百萬筆的訊息. 因為其高度模組化,
+以及輸出格式的高度彈性, 因此能依每家公司的需求進行客製化. 輸出可到各種資料庫 MySQL, PostgreSQL,
+Oracle, 或 MongoDB, 甚至於是 Eliasticsearh 或 Hadoop 的檔案格式 hdfs. 如果怕資料來不及接收,
+也能經過各種 Queues, 例如 redis, zmq3 等來當緩衝.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果你是 Linux 作業系統, 當安裝 rsyslog 之後, 你可以在兩個地方做設定, 一個是跟 rsyslog 比較直接相關的東西,
+可以定義在 /etc/rsyslog.conf 檔案裡, 其他若要做個別不同方法或應用的設定, 可以在 /etc/rsyslog.d
+目錄下, 提每個功能個別定義一個 config 檔, 因為在 /etc/rsyslog.conf 的最後一行, 會把其他 config 檔讀進來(如下).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Include all config files in /etc/rsyslog.d/&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$IncludeConfig&lt;/span&gt; /etc/rsyslog.d/*.conf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;所以我們可以多加一個新設定 rsyslogd.conf 在 /etc/rsyslog.d/ 目錄下, 其內容如下&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;## rsyslogd.conf&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ModLoad&lt;/span&gt; immark.so
+&lt;span class=&quot;nv&quot;&gt;$ModLoad&lt;/span&gt; imuxsock.so
+&lt;span class=&quot;nv&quot;&gt;$ModLoad&lt;/span&gt; imklog.so
+&lt;span class=&quot;nv&quot;&gt;$ModLoad&lt;/span&gt; imudp
+&lt;span class=&quot;c&quot;&gt;# You only need $UDPServerRun if you want your syslog to be a centralized server.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$UDPServerRun&lt;/span&gt; 514
+&lt;span class=&quot;nv&quot;&gt;$AllowedSender&lt;/span&gt; UDP, 127.0.0.1, &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;::1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;/128
+
+&lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt; ls_json,&lt;span class=&quot;s2&quot;&gt;&amp;quot;\{\%timestamp:::date-rfc3339,jsonf:@timestamp%,%source:::jsonf:@source_host%,\&amp;quot;@source\&amp;quot;:\&amp;quot;syslog://%fromhost-ip:::json%\&amp;quot;,\&amp;quot;@message\&amp;quot;:\&amp;quot;%timestamp% %app-name%:%msg:::json%\&amp;quot;,\&amp;quot;@fields\&amp;quot;:\{\%syslogfacility-text:::jsonf:facility%,%syslogseverity-text:::jsonf:severity%,%app-name:::jsonf:program%,%procid:::jsonf:processid%}}&amp;quot;&lt;/span&gt;
+
+*.*  @localhost:55514&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;ls_json&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;內容表示 rsyslog 會以 ls_json 定義的格式, 將資料送到本機 localhost 的 55514 port.
+本機在裝個 logstash 在 55514 port, 將內容轉送到 elasticsearch server 只要加一個 logstash
+設定如下:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;input &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  udp &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;port&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 55514
+    &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;rsyslog&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;buffer_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; 8192
+    &lt;span class=&quot;nv&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;json_event&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+output &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  elasticsearch &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;localhost&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#stdout { codec =&amp;gt; rubydebug }&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;以上 logstash 設定檔, logstash_rsyslog.conf, 可以放在 /opt/logstash/server/etc/conf.d
+目錄下, 再重啟 logstash_server 即可.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo service logstash_server restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;當然要新增或維護多台或甚至上百台電腦的 config 檔時, 若不採用任何像 chef, puppet, ansible,
+或 salt 等自動化部屬工具, 對系統管理者來說, 將會是一個很頭痛的問題.
+以上只是用手動先試試看, 設定檔的功能是否如我們所預期. 以 chef 為例, 再來就需要修改 cookbook,
+讓 chef 自動安裝 rsyslog 及 logstash 到每一台電腦, 並且自動產生或修改必要的 config 檔.
+如此一來, 也替未來的任何修改或補丁, 做好了萬全的準備.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;聯絡我們:&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;請用&lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#104;&amp;#101;&amp;#108;&amp;#108;&amp;#111;&amp;#064;&amp;#108;&amp;#111;&amp;#103;&amp;#052;&amp;#097;&amp;#110;&amp;#097;&amp;#108;&amp;#121;&amp;#116;&amp;#105;&amp;#099;&amp;#115;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;電子郵件 hello@log4analytics.com&lt;/a&gt;或電話 0910-006-662(王先生)聯絡,
+安排展示時間或安裝監控及查詢軟體.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;桐立科技, Log4 Analytics 團隊&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/rsyslog-logstash/&quot;&gt;如何用 logstash 收集 rsyslog 的資料&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on June 02, 2015.&lt;/p&gt;</content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[利用 SIEM 做好最基本的個資保護以及資安管理]]></title>
+  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/siem-solutions/" />
+  <id>//www.log4analytics.com/ming/siem-solutions</id>
+  <published>2015-04-27T14:02:00+08:00</published>
+  <updated>2015-04-27T14:02:00+08:00</updated>
+  <author>
+    <name>Ming-der Wang</name>
+    <uri>//www.log4analytics.com</uri>
+    <email>ming@log4analytics.com</email>
+  </author>
+  <content type="html">&lt;p&gt;明天一年ㄧ度的國際安全博覽會Secutech,又要在台北南港展覽館隆重登場. 但大部分的人對於安全
+焦點都聚集在實體安全, 卻忽略了看不見的網路安全, 資訊安全這一塊. 其實雖然新的個資法早在
+2012年10月1日已經上路, 到底有多少人願意花更多軟硬體設備來保護公司機密資料, 以及主動
+保護客戶資料不被盜取. 我們來分析到底有哪些最基本的保護動作我們可以利用 SIEM
+或硬體防護牆來保護公司的電腦不被入侵. 這裡我們先針對 SIEM 來討論.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;什麼是&lt;a href=&quot;http://www.ithome.com.tw/node/77205&quot;&gt;SIEM 軟體?&lt;/a&gt; 這個連結引述 IThome
+已經介紹不少log管理及報表軟體, SIEM 就是 Security Information and Event Management.
+的縮寫. 簡單講就是利用事件(或所謂的系統的logs)的有效管理, 來解決資安的問題.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;2012年絕大部份這類軟體還是著重於 log 的收集與報表的產生.但三年後的今天,根據2014年
+Gartnar
+對所有175家SIEM軟體公司所做的MQ圖的分析結果來看, 具有領導指標的幾家廠商都開始著重及時查詢與自動反應.
+甚至於未來可能導入人工智慧 (這是我說的), 來做更準確的預測, 做最適當的防堵, 以降低被入侵的風險.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;老實說, Gartner的分析師也說&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;“The greatest area of unmet need is effective targeted attack and breach detection. Organizations are failing at early breach detection, with more than 92% of breaches undetected by the breached organization. The situation can be improved with stronger threat intelligence, the addition of behavior profiling and better analytics. Most companies expand their initial SIEM deployments over a three-year period to include more event sources and greater use of real-time monitoring.”&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;目前最大的問題, 還是在是否能有效的偵測到目標性攻擊以及找到弱點. 有92%被入侵的公司或單位
+都無法在初期弱點偵測發現問題. 這些問題必須用更好的分析能力以及更聰明的方法來解決入侵的
+問題. 所有公司在未來三年內都期望能有更即時監控與事件資料能結合的 SIEM 來使用.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;但如果能做最基本的 log 集中管理, 安裝簡單的入侵事件收集 agents, 平時監控到底有多少
+IP嘗試的對你公司電腦做攻擊, 當你發現有此現象, 就應該做更嚴格的密碼把關, 架設更高的層次
+的防火牆安全措施. 如果沒有即時監控, 就像平時不做健康檢查, 也不量血壓是一樣的危險.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;我們希望能結合類似 splunk 能即時查詢IT資料的 Elasticsearch 軟體與&lt;a href=&quot;https://exchange.xforce.ibmcloud.com/&quot;&gt;IBM X-force
+Exchange&lt;/a&gt; 智慧型資安即時資訊, 來協助您防衛貴單位或公司的電腦和網路, 盡量能保護公司
+多年來累積的智慧資產以及客戶資料, 避免外洩. 有興趣合作的客戶或廠商, 都可以與我們聯絡.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;聯絡我們:&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;請用&lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#114;&amp;#116;&amp;#064;&amp;#108;&amp;#111;&amp;#103;&amp;#052;&amp;#097;&amp;#110;&amp;#097;&amp;#108;&amp;#121;&amp;#116;&amp;#105;&amp;#099;&amp;#115;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;電子郵件 sales@log4analytics.com&lt;/a&gt;或電話 0910-006-662(王先生)聯絡,
+安排展示時間或安裝監控及查詢軟體.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;桐立科技, Log4 Analytics 團隊&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/siem-solutions/&quot;&gt;利用 SIEM 做好最基本的個資保護以及資安管理&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 27, 2015.&lt;/p&gt;</content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[對抗駭客入侵防範針對性攻擊, 預防勝於治療]]></title>
+  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/preventing-cyber-attacks/" />
+  <id>//www.log4analytics.com/ming/preventing-cyber-attacks</id>
   <published>2015-04-15T16:37:00+08:00</published>
   <updated>2015-04-15T16:37:00+08:00</updated>
   <author>
@@ -26,7 +230,8 @@
     <uri>//www.log4analytics.com</uri>
     <email>ming@log4analytics.com</email>
   </author>
-  <content type="html">&lt;p&gt;&lt;a href=&quot;http://video.n.yam.com/20150415977398/%E5%A4%A7%E9%99%B8%E9%A7%AD%E5%AE%A2%E6%94%BB%E6%93%8A%E6%9F%AF%E8%BE%A6%E5%85%AC%E5%AE%A4%20%E5%81%87%E9%83%B5%E4%BB%B6%E9%A8%99%E4%BA%BA%E5%93%A1%E8%B3%87%E6%96%99&quot;&gt;最近新聞&lt;/a&gt; 有關駭客攻擊柯辦公室電腦, 每個公司或政府單位人人自危. 也許有些公司覺得公司電腦都有安裝
+  <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.ithome.com.tw/news/95310&quot;&gt;最近新聞&lt;/a&gt; 有關駭客針對性攻擊柯辦公室電腦,
+每個公司或政府單位人人自危. 也許有些公司覺得公司電腦都有安裝
 防毒軟體, 應該不會有問題, 而忽略了近年來, 病毒軟體已經無法有效防止駭客入侵. 更多人以為
 已經買了很貴的防火牆應該不會有問題, 或是打從心裡就覺得沒人會攻擊您公司電腦. 這樣的想法更讓
 駭客趁虛而入. 所以有人戲稱, “世界上只有兩種人, 一種是發現自己電腦已經被駭客入侵, 另一種
@@ -83,9 +288,9 @@
 
 &lt;/blockquote&gt;
 
-&lt;p&gt;桐立科技, Log4Analytics 團隊&lt;/p&gt;
+&lt;p&gt;桐立科技, Log4 Analytics 團隊&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/prepare-for-attacks/&quot;&gt;對抗駭客入侵, 預防勝於治療&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 15, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/preventing-cyber-attacks/&quot;&gt;對抗駭客入侵防範針對性攻擊, 預防勝於治療&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 15, 2015.&lt;/p&gt;</content>
 </entry>
 
 
