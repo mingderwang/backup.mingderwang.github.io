@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>//log4analytics.com/ming/rsyslog-logstash/</loc>
+    <loc>//www.log4analytics.com/ming/rsyslog-logstash/</loc>
     <lastmod>2015-06-02T15:14:00+08:00</lastmod>
   </url>
   <url>
-    <loc>//log4analytics.com/ming/siem-solutions/</loc>
+    <loc>//www.log4analytics.com/ming/siem-solutions/</loc>
     <lastmod>2015-04-27T14:02:00+08:00</lastmod>
   </url>
   <url>
-    <loc>//log4analytics.com/ming/preventing-cyber-attacks/</loc>
+    <loc>//www.log4analytics.com/ming/preventing-cyber-attacks/</loc>
     <lastmod>2015-04-15T16:37:00+08:00</lastmod>
   </url>
   <url>
-    <loc>//log4analytics.com/ming/welcome-to-log4-analytics-online-support/</loc>
+    <loc>//www.log4analytics.com/ming/welcome-to-log4-analytics-online-support/</loc>
     <lastmod>2015-04-14T13:34:00+08:00</lastmod>
   </url>
   <url>
-    <loc>//log4analytics.com/about/</loc>
+    <loc>//www.log4analytics.com/about/</loc>
   </url>
   <url>
-    <loc>//log4analytics.com/posts/</loc>
+    <loc>//www.log4analytics.com/posts/</loc>
   </url>
   <url>
-    <loc>//log4analytics.com/pricing/</loc>
+    <loc>//www.log4analytics.com/pricing/</loc>
   </url>
   <url>
-    <loc>//log4analytics.com/products/</loc>
+    <loc>//www.log4analytics.com/products/</loc>
   </url>
   <url>
-    <loc>//log4analytics.com/</loc>
+    <loc>//www.log4analytics.com/</loc>
   </url>
 </urlset>
