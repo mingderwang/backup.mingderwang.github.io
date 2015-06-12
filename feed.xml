@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Log4 Analytics</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="//www.log4analytics.com/feed.xml" />
-<link rel="alternate" type="text/html" href="//www.log4analytics.com" />
-<updated>2015-06-12T17:20:42+08:00</updated>
-<id>//www.log4analytics.com/</id>
+<link rel="self" type="application/atom+xml" href="//log4analytics.com/feed.xml" />
+<link rel="alternate" type="text/html" href="//log4analytics.com" />
+<updated>2015-06-12T17:22:34+08:00</updated>
+<id>//log4analytics.com/</id>
 <author>
   <name>Log4 資料分析</name>
-  <uri>//www.log4analytics.com/</uri>
+  <uri>//log4analytics.com/</uri>
   <email>sales@log4analytics.com</email>
 </author>
 
@@ -17,13 +17,13 @@
 
 <entry>
   <title type="html"><![CDATA[如何用 logstash 收集 rsyslog 的資料]]></title>
-  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/rsyslog-logstash/" />
-  <id>//www.log4analytics.com/ming/rsyslog-logstash</id>
+  <link rel="alternate" type="text/html" href="//log4analytics.com/ming/rsyslog-logstash/" />
+  <id>//log4analytics.com/ming/rsyslog-logstash</id>
   <published>2015-06-02T15:14:00+08:00</published>
   <updated>2015-06-02T15:14:00+08:00</updated>
   <author>
     <name>Ming-der Wang</name>
-    <uri>//www.log4analytics.com</uri>
+    <uri>//log4analytics.com</uri>
     <email>ming@log4analytics.com</email>
   </author>
   <content type="html">&lt;p&gt;提到電腦管理, 很多公司為了符合ISO, 都有規定將重要電腦的系統日誌收集起來, 方便事後查詢.
@@ -124,7 +124,7 @@ output &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 &lt;p&gt;桐立科技, Log4 Analytics 團隊&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/rsyslog-logstash/&quot;&gt;如何用 logstash 收集 rsyslog 的資料&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on June 02, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;//log4analytics.com/ming/rsyslog-logstash/&quot;&gt;如何用 logstash 收集 rsyslog 的資料&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on June 02, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -132,13 +132,13 @@ output &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 <entry>
   <title type="html"><![CDATA[利用 SIEM 做好最基本的個資保護以及資安管理]]></title>
-  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/siem-solutions/" />
-  <id>//www.log4analytics.com/ming/siem-solutions</id>
+  <link rel="alternate" type="text/html" href="//log4analytics.com/ming/siem-solutions/" />
+  <id>//log4analytics.com/ming/siem-solutions</id>
   <published>2015-04-27T14:02:00+08:00</published>
   <updated>2015-04-27T14:02:00+08:00</updated>
   <author>
     <name>Ming-der Wang</name>
-    <uri>//www.log4analytics.com</uri>
+    <uri>//log4analytics.com</uri>
     <email>ming@log4analytics.com</email>
   </author>
   <content type="html">&lt;p&gt;明天一年ㄧ度的國際安全博覽會Secutech,又要在台北南港展覽館隆重登場. 但大部分的人對於安全
@@ -214,7 +214,7 @@ Exchange&lt;/a&gt; 智慧型資安即時資訊, 來協助您防衛貴單位或�
 
 &lt;p&gt;桐立科技, Log4 Analytics 團隊&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/siem-solutions/&quot;&gt;利用 SIEM 做好最基本的個資保護以及資安管理&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 27, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;//log4analytics.com/ming/siem-solutions/&quot;&gt;利用 SIEM 做好最基本的個資保護以及資安管理&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 27, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -222,13 +222,13 @@ Exchange&lt;/a&gt; 智慧型資安即時資訊, 來協助您防衛貴單位或�
 
 <entry>
   <title type="html"><![CDATA[對抗駭客入侵防範針對性攻擊, 預防勝於治療]]></title>
-  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/preventing-cyber-attacks/" />
-  <id>//www.log4analytics.com/ming/preventing-cyber-attacks</id>
+  <link rel="alternate" type="text/html" href="//log4analytics.com/ming/preventing-cyber-attacks/" />
+  <id>//log4analytics.com/ming/preventing-cyber-attacks</id>
   <published>2015-04-15T16:37:00+08:00</published>
   <updated>2015-04-15T16:37:00+08:00</updated>
   <author>
     <name>Ming-der Wang</name>
-    <uri>//www.log4analytics.com</uri>
+    <uri>//log4analytics.com</uri>
     <email>ming@log4analytics.com</email>
   </author>
   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.ithome.com.tw/news/95310&quot;&gt;最近新聞&lt;/a&gt; 有關駭客針對性攻擊柯辦公室電腦,
@@ -291,7 +291,7 @@ Exchange&lt;/a&gt; 智慧型資安即時資訊, 來協助您防衛貴單位或�
 
 &lt;p&gt;桐立科技, Log4 Analytics 團隊&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/preventing-cyber-attacks/&quot;&gt;對抗駭客入侵防範針對性攻擊, 預防勝於治療&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 15, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;//log4analytics.com/ming/preventing-cyber-attacks/&quot;&gt;對抗駭客入侵防範針對性攻擊, 預防勝於治療&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 15, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -299,13 +299,13 @@ Exchange&lt;/a&gt; 智慧型資安即時資訊, 來協助您防衛貴單位或�
 
 <entry>
   <title type="html"><![CDATA[Welcome to Log4 Analytics Online Support]]></title>
-  <link rel="alternate" type="text/html" href="//www.log4analytics.com/ming/welcome-to-log4-analytics-online-support/" />
-  <id>//www.log4analytics.com/ming/welcome-to-log4-analytics-online-support</id>
+  <link rel="alternate" type="text/html" href="//log4analytics.com/ming/welcome-to-log4-analytics-online-support/" />
+  <id>//log4analytics.com/ming/welcome-to-log4-analytics-online-support</id>
   <published>2015-04-14T13:34:00+08:00</published>
   <updated>2015-04-14T13:34:00+08:00</updated>
   <author>
     <name>Ming-der Wang</name>
-    <uri>//www.log4analytics.com</uri>
+    <uri>//log4analytics.com</uri>
     <email>ming@log4analytics.com</email>
   </author>
   <content type="html">&lt;p&gt;Welcome to join our DevOps community. We will share our knowlege about IT automation and data analysis for systems, applications, or even security.&lt;/p&gt;
@@ -321,7 +321,7 @@ Exchange&lt;/a&gt; 智慧型資安即時資訊, 來協助您防衛貴單位或�
 &lt;p&gt;Please &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#114;&amp;#116;&amp;#064;&amp;#108;&amp;#111;&amp;#103;&amp;#052;&amp;#097;&amp;#110;&amp;#097;&amp;#108;&amp;#121;&amp;#116;&amp;#105;&amp;#099;&amp;#115;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;send us&lt;/a&gt; your email address if you want to join &lt;a href=&quot;https://devopstaiwan.slack.com&quot;&gt;DevOpsTaiwan.slack.com&lt;/a&gt;, We need your email address to invite you. I hope devops shares theirs projects or experiences in this chat room. specially who use docker, chef, or any other tools, like logstash, splunk (or elasticsearch). kubernetes, monit, zabbix, Jenkins, and so on.&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;//www.log4analytics.com/ming/welcome-to-log4-analytics-online-support/&quot;&gt;Welcome to Log4 Analytics Online Support&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//www.log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 14, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;//log4analytics.com/ming/welcome-to-log4-analytics-online-support/&quot;&gt;Welcome to Log4 Analytics Online Support&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on April 14, 2015.&lt;/p&gt;</content>
 </entry>
 
 </feed>
