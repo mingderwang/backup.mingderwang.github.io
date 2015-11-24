@@ -4,13 +4,101 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="//log4analytics.com/feed.xml" />
 <link rel="alternate" type="text/html" href="//log4analytics.com" />
-<updated>2015-06-12T18:53:51+08:00</updated>
+<updated>2015-11-24T20:05:59+08:00</updated>
 <id>//log4analytics.com/</id>
 <author>
   <name>Log4 資料分析</name>
   <uri>//log4analytics.com/</uri>
   <email>sales@log4analytics.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[如何使用 gogetDB]]></title>
+  <link rel="alternate" type="text/html" href="//log4analytics.com/ming/gogetdb/" />
+  <id>//log4analytics.com/ming/gogetdb</id>
+  <published>2015-11-24T16:24:00+08:00</published>
+  <updated>2015-11-24T16:24:00+08:00</updated>
+  <author>
+    <name>Ming-der Wang</name>
+    <uri>//log4analytics.com</uri>
+    <email>ming@log4analytics.com</email>
+  </author>
+  <content type="html">&lt;p&gt;市面上已經有幾家 Database as a Service (DaaS) 資料庫雲端服務公司, 例如 firebase (現在是 Google 公司所有), 以及 parse (現在是 Facebook 公司所有). 但如果我們想要更自動化, 還有一個 &lt;a href=&quot;http://gogetdb.com&quot;&gt;gogetDB&lt;/a&gt; 可以使用.
+&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;什麼是 &lt;a href=&quot;http://www.ibm.com/developerworks/library/ws-restful/&quot;&gt;REST API&lt;/a&gt;？ 現在幾乎所有大型公司例如, Twitter, Facebook, Google, IBM 包括上千家開放 APIs 的公司, 都是採用業界標準的 REST API 方式來讓第三方開發或自己網站或手機apps 來使用. 即使是資料庫, 也不是讓前端直接存取, 而是採用 http 介面 URL 的方式, 用POST, GET, PUT, DELETE 等方式來做存取, 刪除, 列表等動作. 由於這些介面非常標準, 而且幾乎會寫網路程式的工程師都可以很快的用 REST API 進行開發與測試.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;比如說, 如果我們有一個 backend 資料庫開放了以下 API&lt;/p&gt;
+
+&lt;p&gt;POST http://api.gogetdb.com:32663/student&lt;/p&gt;
+
+&lt;p&gt;那我們可以用 Linux 最簡單的 url 測試程式來測試看看&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl -X POST -d @student.json --header &lt;span class=&quot;s2&quot;&gt;&amp;quot;content-type: application/json&amp;quot;&lt;/span&gt; http://api.gogetdb.com:32663/student&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;其中一筆 student 的資料, 可以放在 student.json 檔案裡如下&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;John&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;curl 指令會回傳 json 格式的結果如下&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ginger_created&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1448365567&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ginger_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;John&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;表示我們已經成功上傳一筆學生資料, 且紀錄該筆資料創立時間,叫 ginger_created, 以及資料ID, 叫 ginger_id&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://gogetDB.com&quot;&gt;gogetDB&lt;/a&gt; 提供一個最簡單的資料庫產生方法, 就是只要你 follow @gogetdb_preview 
+就可以免費試用一個 REST API 的後端資料庫. 在 @gogetdb_preview 也 follow 你之後, 
+你可以將你需要的資料格範例, 以 json 格式 tweet 給它, 並且告訴它你 API 的對應物件名稱, 
+例如這裡是 student&lt;/p&gt;
+
+&lt;p&gt;所以 tweet 給@gogetdb_preview 以下這串範例,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&amp;quot;student&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;John&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;一分鐘之內, @gogetdb_preview 會回 tweet 你以下 endpoint URL連結&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;http://api.gogetDB.com:31347/student&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;一個全新的後端資料庫 API 自動產生, 而且數秒後就能使用. 前端工程師, iOS 及 Android 的
+mobile 工程師, 或甚至於 IoT 的產品開發, 都再也不需要仰賴後端資料工程師, 即可完成整個開發任務!&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;聯絡我們:&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;請用&lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#104;&amp;#101;&amp;#108;&amp;#108;&amp;#111;&amp;#064;&amp;#108;&amp;#111;&amp;#103;&amp;#052;&amp;#097;&amp;#110;&amp;#097;&amp;#108;&amp;#121;&amp;#116;&amp;#105;&amp;#099;&amp;#115;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;電子郵件 hello@log4analytics.com&lt;/a&gt;或電話 0910-006-662(王先生)聯絡,
+安排展示時間或安裝監控及查詢軟體.&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;桐立科技, Log4 Analytics 團隊&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;//log4analytics.com/ming/gogetdb/&quot;&gt;如何使用 gogetDB&lt;/a&gt; was originally published by Ming-der Wang at &lt;a href=&quot;//log4analytics.com&quot;&gt;Log4 Analytics&lt;/a&gt; on November 24, 2015.&lt;/p&gt;</content>
+</entry>
 
 
   

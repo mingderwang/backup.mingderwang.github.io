@@ -5,17 +5,19 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Welcome to Log4 Analytics Online Support &#8211; Log4 Analytics</title>
-<meta name="description" content="Welcome to join our DevOps community. We will share our knowlege about IT automation and data analysis for systems, applications, or even security.
+<title>如何使用 gogetDB &#8211; Log4 Analytics</title>
+<meta name="description" content="市面上已經有幾家 Database as a Service (DaaS) 資料庫雲端服務公司, 例如 firebase (現在是 Google 公司所有), 以及 parse (現在是 Facebook 公司所有). 但如果我們想要更自動化, 還有一個 gogetDB 可以使用.
+&gt;
 
 ">
-<meta name="keywords" content="devops, chef, support, devops">
+<meta name="keywords" content="database, mysql, daas, golang, firebase, parse, backend, endpoint">
 
   
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Welcome to Log4 Analytics Online Support">
-<meta name="twitter:description" content="Welcome to join our DevOps community. We will share our knowlege about IT automation and data analysis for systems, applications, or even security.
+<meta name="twitter:title" content="如何使用 gogetDB">
+<meta name="twitter:description" content="市面上已經有幾家 Database as a Service (DaaS) 資料庫雲端服務公司, 例如 firebase (現在是 Google 公司所有), 以及 parse (現在是 Facebook 公司所有). 但如果我們想要更自動化, 還有一個 gogetDB 可以使用.
+&gt;
 
 ">
 <meta name="twitter:site" content="@mingderwang">
@@ -27,18 +29,19 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Welcome to Log4 Analytics Online Support">
-<meta property="og:description" content="Welcome to join our DevOps community. We will share our knowlege about IT automation and data analysis for systems, applications, or even security.
+<meta property="og:title" content="如何使用 gogetDB">
+<meta property="og:description" content="市面上已經有幾家 Database as a Service (DaaS) 資料庫雲端服務公司, 例如 firebase (現在是 Google 公司所有), 以及 parse (現在是 Facebook 公司所有). 但如果我們想要更自動化, 還有一個 gogetDB 可以使用.
+&gt;
 
 ">
-<meta property="og:url" content="//log4analytics.com/ming/welcome-to-log4-analytics-online-support/">
+<meta property="og:url" content="//log4analytics.com/ming/gogetdb/">
 <meta property="og:site_name" content="Log4 Analytics">
 
 
 
 
 
-<link rel="canonical" href="//log4analytics.com/ming/welcome-to-log4-analytics-online-support/">
+<link rel="canonical" href="//log4analytics.com/ming/gogetdb/">
 <link href="//log4analytics.com/feed.xml" type="application/atom+xml" rel="alternate" title="Log4 Analytics Feed">
 
 
@@ -173,22 +176,80 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="//log4analytics.com/ming/welcome-to-log4-analytics-online-support/" rel="bookmark" title="Welcome to Log4 Analytics Online Support">Welcome to Log4 Analytics Online Support</a></h1>
+        <h1><a href="//log4analytics.com/ming/gogetdb/" rel="bookmark" title="如何使用 gogetDB">如何使用 gogetDB</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Welcome to join our DevOps community. We will share our knowlege about IT automation and data analysis for systems, applications, or even security.</p>
+      <p>市面上已經有幾家 Database as a Service (DaaS) 資料庫雲端服務公司, 例如 firebase (現在是 Google 公司所有), 以及 parse (現在是 Facebook 公司所有). 但如果我們想要更自動化, 還有一個 <a href="http://gogetdb.com">gogetDB</a> 可以使用.
+&gt;</p>
 
-<ul>
-  <li>This is a snapshot of slack search as follow; It’s so powerful so that we also can search all chats in history or find uploaded documents for recalls.</li>
-</ul>
+<p>什麼是 <a href="http://www.ibm.com/developerworks/library/ws-restful/">REST API</a>？ 現在幾乎所有大型公司例如, Twitter, Facebook, Google, IBM 包括上千家開放 APIs 的公司, 都是採用業界標準的 REST API 方式來讓第三方開發或自己網站或手機apps 來使用. 即使是資料庫, 也不是讓前端直接存取, 而是採用 http 介面 URL 的方式, 用POST, GET, PUT, DELETE 等方式來做存取, 刪除, 列表等動作. 由於這些介面非常標準, 而且幾乎會寫網路程式的工程師都可以很快的用 REST API 進行開發與測試.</p>
 
-<p><img src="/images/slack_snapshot.png" alt="slack search" /></p>
+<blockquote>
 
-<h2 id="to-join-us">To Join Us</h2>
+</blockquote>
 
-<p>Please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#108;&#111;&#103;&#052;&#097;&#110;&#097;&#108;&#121;&#116;&#105;&#099;&#115;&#046;&#099;&#111;&#109;">send us</a> your email address if you want to join <a href="https://devopstaiwan.slack.com">DevOpsTaiwan.slack.com</a>, We need your email address to invite you. I hope devops shares theirs projects or experiences in this chat room. specially who use docker, chef, or any other tools, like logstash, splunk (or elasticsearch). kubernetes, monit, zabbix, Jenkins, and so on.</p>
+<p>比如說, 如果我們有一個 backend 資料庫開放了以下 API</p>
 
+<p>POST http://api.gogetdb.com:32663/student</p>
+
+<p>那我們可以用 Linux 最簡單的 url 測試程式來測試看看</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl -X POST -d @student.json --header <span class="s2">&quot;content-type: application/json&quot;</span> http://api.gogetdb.com:32663/student</code></pre></div>
+
+<p>其中一筆 student 的資料, 可以放在 student.json 檔案裡如下</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+   <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;age&quot;</span><span class="o">:</span><span class="mi">32</span>
+<span class="p">}</span></code></pre></div>
+
+<p>curl 指令會回傳 json 格式的結果如下</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span><span class="s2">&quot;ginger_created&quot;</span><span class="o">:</span><span class="mi">1448365567</span><span class="p">,</span><span class="s2">&quot;ginger_id&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="o">:</span><span class="mi">32</span><span class="p">}</span></code></pre></div>
+
+<p>表示我們已經成功上傳一筆學生資料, 且紀錄該筆資料創立時間,叫 ginger_created, 以及資料ID, 叫 ginger_id</p>
+
+<blockquote>
+
+</blockquote>
+
+<p><a href="http://gogetDB.com">gogetDB</a> 提供一個最簡單的資料庫產生方法, 就是只要你 follow @gogetdb_preview 
+就可以免費試用一個 REST API 的後端資料庫. 在 @gogetdb_preview 也 follow 你之後, 
+你可以將你需要的資料格範例, 以 json 格式 tweet 給它, 並且告訴它你 API 的對應物件名稱, 
+例如這裡是 student</p>
+
+<p>所以 tweet 給@gogetdb_preview 以下這串範例,</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+   <span class="s2">&quot;student&quot;</span><span class="o">:</span><span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;age&quot;</span><span class="o">:</span><span class="mi">32</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>一分鐘之內, @gogetdb_preview 會回 tweet 你以下 endpoint URL連結</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">http://api.gogetDB.com:31347/student</code></pre></div>
+
+<p>一個全新的後端資料庫 API 自動產生, 而且數秒後就能使用. 前端工程師, iOS 及 Android 的
+mobile 工程師, 或甚至於 IoT 的產品開發, 都再也不需要仰賴後端資料工程師, 即可完成整個開發任務!</p>
+
+<blockquote>
+
+</blockquote>
+
+<h2 id="section">聯絡我們:</h2>
+<hr />
+
+<p>請用<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#104;&#101;&#108;&#108;&#111;&#064;&#108;&#111;&#103;&#052;&#097;&#110;&#097;&#108;&#121;&#116;&#105;&#099;&#115;&#046;&#099;&#111;&#109;">電子郵件 hello@log4analytics.com</a>或電話 0910-006-662(王先生)聯絡,
+安排展示時間或安裝監控及查詢軟體.</p>
+
+<blockquote>
+
+</blockquote>
+
+<p>桐立科技, Log4 Analytics 團隊</p>
 
       <hr />
       <footer role="contentinfo">
@@ -218,7 +279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         </div>
-        <p class="byline"><strong>Welcome to Log4 Analytics Online Support</strong> was published on <time datetime="2015-04-14T13:34:00+08:00">April 14, 2015</time>.</p>
+        <p class="byline"><strong>如何使用 gogetDB</strong> was published on <time datetime="2015-11-24T16:24:00+08:00">November 24, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -230,11 +291,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <h4>You might also enjoy <small class="pull-right">(<a href="//log4analytics.com/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="//log4analytics.com/ming/gogetdb/" title="如何使用 gogetDB">如何使用 gogetDB</a></li>
-    
       <li><a href="//log4analytics.com/ming/rsyslog-logstash/" title="如何用 logstash 收集 rsyslog 的資料">如何用 logstash 收集 rsyslog 的資料</a></li>
     
       <li><a href="//log4analytics.com/ming/siem-solutions/" title="利用 SIEM 做好最基本的個資保護以及資安管理">利用 SIEM 做好最基本的個資保護以及資安管理</a></li>
+    
+      <li><a href="//log4analytics.com/ming/preventing-cyber-attacks/" title="對抗駭客入侵防範針對性攻擊, 預防勝於治療">對抗駭客入侵防範針對性攻擊, 預防勝於治療</a></li>
     
     </ul>
     <hr />
